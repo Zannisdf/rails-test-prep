@@ -6,5 +6,6 @@
 <p><%= @product.price %></p>
 <h3>Description</h3>
 <p><%= @product.description %></p>
+<h3>Favourite?</h3><%= @product.favourite ? 'Yes' : 'No' %>
 <h3>Image</h3>
 <%= image_tag @product.image, class:'img-fluid' %>
