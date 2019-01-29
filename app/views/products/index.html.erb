@@ -8,8 +8,8 @@
   <%= alert %>
 <% end %>
 
-<table class="table table-hover">
-  <thead>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Price</th>
@@ -23,13 +23,14 @@
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= product.description %></td>
-        <td><%= link_to 'Delete', product_path(product), data: {confirm: 'Are you sure?', method: :delete}, class: 'btn btn-danger'%></td>
+        <td class="text-center"><%= link_to 'Delete', product_path(product), data: {confirm: 'Are you sure?', method: :delete}, class: 'btn btn-danger'%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <%= form_with(model: @product, local: true) do |f| %>
+  <h2>New Product</h2>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
