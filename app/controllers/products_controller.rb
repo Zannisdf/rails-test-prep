@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[show destroy]
+  before_action :set_product, only: %i[show destroy edit update]
 
   def index
     @products = Product.order(:id)
@@ -16,6 +16,16 @@ class ProductsController < ApplicationController
   end
 
   def show; end
+
+  def edit; end
+
+  def update
+    if @product.update(product_params)
+      redirect_to @product, notice: 'Product saved!'
+    else
+      redirect_to root_path, alert: 'An error has ocurred, please try again.'
+    end
+  end
 
   def destroy
     @product.destroy
