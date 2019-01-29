@@ -38,6 +38,10 @@ class ProductsController < ApplicationController
     redirect_to @product
   end
 
+  def favourites
+    @products = Product.where('favourite = ?', 'true')
+  end
+
   private
 
   def product_params

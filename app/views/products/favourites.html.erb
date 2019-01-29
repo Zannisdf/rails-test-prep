@@ -1,0 +1,18 @@
+<h1>Favourites</h1>
+
+<table class="table table-hover table-bordered">
+  <thead class='thead-dark'>
+    <tr>
+      <th scope="col">Product name</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr scope="row">
+        <td><%= product.name %></td>
+        <td><%= image_tag product.image %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

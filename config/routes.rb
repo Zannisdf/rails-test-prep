@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'products', to: 'products#index'
+  get 'products/favourites'
   patch 'products/:id/set_favourite', to: 'products#set_favourite', as: 'set_fav'
   get 'products/:id', to: 'products#show', as: 'product'
   resources :products, only: [:create, :destroy, :update, :edit]
