@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: %i[show destroy]
+
   def index
     @products = Product.order(:id)
     @product = Product.new
@@ -13,12 +15,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
-    @product = Product.find(params[:id])
-  end
+  def show; end
 
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
     redirect_to root_path, notice: 'Product was deleted.'
   end
@@ -27,5 +26,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :price, :description)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
