@@ -1,17 +1,41 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1, h2{
-  margin: 2rem 0;
-}
+.container{
+  h1, h2{
+    margin: 2rem 0;
+  }
 
-form{
-  margin: 2rem auto;
-}
+  form{
+    margin: 2rem auto;
+  }
 
-.thumbnail{
-  width: 50px;
-  height: 50px;
+  .thumbnail{
+    width: 50px;
+    height: 50px;
+  }
+
+  .notification-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    
+    p{
+      margin-bottom: 0;
+    }
+  }
+
+  .notice{
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .alert{
+    background-color: #ffc107;
+  }
 }
 
 .active{
